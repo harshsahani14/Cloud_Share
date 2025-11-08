@@ -1,0 +1,5 @@
+package com.cloushare.backend.dto;
+
+public class ProfileDTO {
+
+}

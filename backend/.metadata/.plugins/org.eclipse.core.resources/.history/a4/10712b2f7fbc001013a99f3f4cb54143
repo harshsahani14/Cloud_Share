@@ -1,0 +1,5 @@
+package com.cloushare.backend.document;
+
+public class ProfileDocument {
+
+}

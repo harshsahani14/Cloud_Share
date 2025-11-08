@@ -1,0 +1,20 @@
+package com.cloudshare.backend.service;
+
+import org.springframework.stereotype.Service;
+
+import com.cloudshare.backend.document.ProfileDocument;
+import com.cloudshare.backend.dto.ProfileDTO;
+import com.cloudshare.backend.repositry.ProfileRepositry;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class ProfileService {
+
+	private ProfileRepositry profileRepositry;
+	
+	public ProfileDTO createProfile(ProfileDTO profileDTO) {
+		return null;
+	}
+}
