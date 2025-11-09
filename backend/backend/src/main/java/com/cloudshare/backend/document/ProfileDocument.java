@@ -1,7 +1,6 @@
 package com.cloudshare.backend.document;
 
 import java.time.Instant;
-import java.util.Objects;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -28,7 +27,7 @@ public class ProfileDocument {
 	private String email;
 	private String firstName;
 	private String lastName;
-	private String credits;
+	private Integer credits;
 	private String photoUrl;
 	
 	@CreatedDate

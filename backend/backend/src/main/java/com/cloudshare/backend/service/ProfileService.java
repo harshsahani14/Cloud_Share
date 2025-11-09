@@ -1,5 +1,7 @@
 package com.cloudshare.backend.service;
 
+import java.time.Instant;
+
 import org.springframework.stereotype.Service;
 
 import com.cloudshare.backend.document.ProfileDocument;
@@ -12,9 +14,15 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ProfileService {
 
-	private ProfileRepositry profileRepositry;
+	private final ProfileRepositry profileRepositry;
 	
 	public ProfileDTO createProfile(ProfileDTO profileDTO) {
-		return null;
+		
+		ProfileDocument profile =  ProfileDocument.builder().clerkId(profileDTO.getClerkId()).email(profileDTO.getEmail()).firstName(profileDTO.getFirstName()).lastName(profileDTO.getLastName()).photoUrl(profileDTO.getPhotoUrl()).credits(5).createdAt(Instant.now()).build();
+		
+		ProfileDocument savedProfile = profileRepositry.save(profile);
+		
+		return ProfileDTO.builder().id(savedProfile.getId()).clerkId(savedProfile.getClerkId()).email(savedProfile.getEmail()).firstName(savedProfile.getFirstName()).lastName(savedProfile.getLastName()).photoUrl(savedProfile.getPhotoUrl()).credits(savedProfile.getCredits()).createdAt(savedProfile.getCreatedAt()).build();
+	
 	}
 }

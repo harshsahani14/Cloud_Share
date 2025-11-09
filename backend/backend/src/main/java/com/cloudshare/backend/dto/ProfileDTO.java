@@ -18,7 +18,7 @@ public class ProfileDTO {
 	private String email;
 	private String firstName;
 	private String lastName;
-	private String credits;
+	private Integer credits;
 	private String photoUrl;
 	private Instant createdAt;
 }
