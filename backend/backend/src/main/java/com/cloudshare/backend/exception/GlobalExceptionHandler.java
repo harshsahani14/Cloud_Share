@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
 		Map<String, Object> data = new HashMap<>();
 		data.put("status", HttpStatus.CONFLICT);
 		data.put("message", "Email already exisits");
-		
+		data.put("error", e.getMessage());		
 		return ResponseEntity.status(HttpStatus.CONFLICT).body(data);
 	}
 }
